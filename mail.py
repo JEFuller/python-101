@@ -29,6 +29,6 @@ def send(sender, receiver, subject, body, image=None):
 
 
     server = smtplib.SMTP("smtp.mailtrap.io", 2525)
-    server.login("2ff5f8d9b897ae", "86e4d0018894a2")
+    server.login("849fe1684e3d78", "dd589f2c09b940")
     server.sendmail(sender, receiver, message.as_string())
     server.quit()
