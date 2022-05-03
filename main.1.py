@@ -1,5 +1,55 @@
-# hello world
-print('Hello World')
+# ASSIGNMENT    PRINT
+
+message = 'hello world'
+
+print(message)
+
+x = 10
+y = 2
+
+z = x + y
+
+print(z)
+
+# COLLECTIONS 
+
+numbers = [x,y]
+
+print(numbers[0])
+
+for number in numbers:
+    if number > 5:
+        print(number)
+
+
+# DICTIONARIES
+
+station = dict()
+station['id'] = "53310"
+station['name'] = "Tabletop Wilderness"
+
+
+print(station)
+
+reading_1 = dict()
+reading_1['time'] = "1pm"
+reading_1['station'] = "53310"
+reading_1['value'] = 2.0
+
+reading_2 = {'time': '2pm', 'sensor': '53310', 'value': 1.5}
+
+# LIST OF DICTIONARIES
+
+readings = [reading_1, reading_2]
+for reading in readings:
+    print(reading)
+
+# BUT NO ONE DOES THIS
+
+# READ FROM FILE / PORT SERVER 
+
+from csv import DictReader
+
 
 # reading a a file in
 # what does it mean to read a file in?
@@ -10,40 +60,7 @@ print('Hello World')
 # gives us a reference to the file we can use in Python
 file = open('data.csv')
 
-
-# 2. Load the data in 
-
-# need to load it in to a "data structure"
-data = dict()
-data['name'] = "JE Fuller"
-
-print(data)
-
-# a dictionary is a collection of key-value pairs
-# useful for storing something which has multiple types of values
-
-reading_1 = dict()
-
-reading_1['time'] = "1pm"
-reading_1['sensor'] = "one"
-reading_1['value'] = 2.0
-
-reading_2 = dict()
-reading_2['time'] = "2pm"
-reading_2['sensor'] = "one"
-reading_2['value'] = 1.5
-
-# we can group togther all the readings in a list
-readings = [reading_1, reading_2]
-for reading in readings:
-    print(reading)
-
-# so now lets read the file in instead of hard coding 
-
-# can ask Python to load a CSV file in to a collection of dictionaries
-# use our first import:
-from csv import DictReader
-
 readings = DictReader(file)
+
 for reading in readings:
-    print(reading)
+    print(reading) # NOTE ALL VALUES ARE STRINGS
